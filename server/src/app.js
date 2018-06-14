@@ -7,15 +7,15 @@ const port = process.env.PORT || 3500;
 
 app.use(morgan('combined')); 
 app.use(bodyParser.json());
+
 app.use(cors());
 
 
 
 
-app.get('/status', (req,res)=>{
-    res.send({
-        message : 'Hello Programmer'
-    })
+app.post('/register', (req,res)=>{
+    console.log("kk"+req.body.email);
+    res.status(200).send( req.body.email);
 })
 
 
